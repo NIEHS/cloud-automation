@@ -16,7 +16,7 @@ calico_yaml=https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.10.1/con
 
 #KUBECTL=$(bash which kubectl)
 if ! $(command -v kubectl) --kubeconfig "${kubeconfig_path}" get daemonsets -n kube-system calico-node > /dev/null 2>&1; then
-  $(command -v kubectl) --kubeconfig "${kubeconfig_path}" apply -f $${calico_yaml}
+  $(command -v kubectl) --kubeconfig "${kubeconfig_path}" apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.10.1/config/v1.7/calico.yaml
 fi
 
 if ! $(command -v kubectl) --kubeconfig "${kubeconfig_path}" get configmap -n kube-system aws-auth > /dev/null 2>&1; then
