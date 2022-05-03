@@ -8,8 +8,10 @@ if [ -f "$${GEN3_HOME}/gen3/gen3setup.sh" ]; then
 fi
 
 
-calico=$${calico:-1.7.5}
-calico_yaml="https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v$${calico}/config/v$(echo $${calico} | sed -e 's/\.[0-9]\+$//')/calico.yaml"
+# calico=$${calico:-1.7.5}
+calico="1.7.5"
+# calico_yaml="https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v$${calico}/config/v$(echo $${calico} | sed -e 's/\.[0-9]\+$//')/calico.yaml"
+calico_yaml=https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/v1.10.1/config/v1.7/calico.yaml
 
 
 #KUBECTL=$(bash which kubectl)
