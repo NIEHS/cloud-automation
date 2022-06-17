@@ -105,10 +105,10 @@ spec:
         resources:
           requests:
             cpu: 0.4
-            memory: 512Mi
+            memory: 256Mi
           limits:
-            cpu: 1
-            memory: 2048Mi
+            cpu: 0.5
+            memory: 1024Mi
       initContainers:
         - name: metadata-db-migrate
           GEN3_METADATA_IMAGE
@@ -120,7 +120,7 @@ spec:
               subPath: metadata.env
           resources:
             limits:
-              cpu: 0.8
+              cpu: 0.5
               memory: 512Mi
           command: ["/bin/sh"]
           args:

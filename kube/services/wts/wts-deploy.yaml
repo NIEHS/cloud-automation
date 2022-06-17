@@ -141,8 +141,8 @@ spec:
             value: "/var/www/wts/appcreds.json"
           resources:
             limits:
-              cpu: 0.8
-              memory: 512Mi
+              cpu: 0.5
+              memory: 256Mi
           command: ["/bin/sh"]
           args:
             - "-c"

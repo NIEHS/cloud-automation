@@ -66,9 +66,9 @@ spec:
           resources:
             limits:
               cpu: 0.5
-              memory: 2Gi
+              memory: 1Gi
           command: ["/bin/bash" ]
-          args: 
+          args:
             - "-c"
             - |
               # get /usr/local/share/ca-certificates/cdis-ca.crt into system bundle
