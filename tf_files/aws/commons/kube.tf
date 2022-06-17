@@ -32,9 +32,9 @@ resource "aws_db_instance" "db_fence" {
     Environment               = "${var.vpc_name}"
     Organization              = "${var.organization_name}"
   } 
-
+  # NIEHS: turning resource protection off
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
     #ignore_changes  = ["*"]
     ignore_changes = ["engine_version","storage_encrypted","identifier"]
   }
@@ -70,8 +70,9 @@ resource "aws_db_instance" "db_gdcapi" {
     Organization              = "${var.organization_name}"
   }
 
+# NIEHS: turning resource protection off
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
     #ignore_changes  = ["*"]
     ignore_changes = ["engine_version","storage_encrypted","identifier"]
   }
@@ -106,9 +107,9 @@ resource "aws_db_instance" "db_indexd" {
     Environment               = "${var.vpc_name}"
     Organization              = "${var.organization_name}"
   }
-
+# NIEHS: turning resource protection off
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
     #ignore_changes  = ["*"]
     ignore_changes = ["engine_version","storage_encrypted","identifier"]
   }
@@ -120,7 +121,7 @@ resource "aws_db_instance" "db_indexd" {
 
 resource "aws_db_parameter_group" "rds-cdis-pg" {
   name   = "${var.vpc_name}-rds-cdis-pg"
-  family = "postgres9.6"
+  family = "postgres13"
 
   # make index searches cheaper per row
   parameter {
