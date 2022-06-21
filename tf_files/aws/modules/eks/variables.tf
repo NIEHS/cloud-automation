@@ -141,7 +141,7 @@ variable "dual_proxy" {
 
 variable "single_az_for_jupyter" {
   description = "Jupyter notebooks on a single AZ"
-  default     = false
+  default     = true
 }
 
 variable "sns_topic_arn" {
