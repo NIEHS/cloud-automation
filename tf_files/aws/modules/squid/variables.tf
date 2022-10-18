@@ -1,7 +1,7 @@
 # id of AWS account that owns the public AMI's
 variable "ami_account_id" {
   # cdis-test
-  default = "707767160287"
+  default = "956747263890"
 }
 
 # the region containing the public source AMI
@@ -11,7 +11,7 @@ variable "ami_region" {
 
 # the name (pattern) of the public source AMI
 variable "ami_name" {
-  default = "ubuntu16-squid-1.0.2-*"
+  default = "ubuntu18-squid*"
 }
 
 variable "csoc_cidr" {
